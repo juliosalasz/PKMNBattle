@@ -39,7 +39,7 @@ export default function Winner() {
         </div>
         <div>
           <h2>Here is your winner</h2>
-          <PokemonCard pkmnArray={selectedPkmn} />
+          {pkmnArray ? <PokemonCard pkmnArray={selectedPkmn} /> : ""}
           <button onClick={goback}>Start Again</button>
         </div>
       </div>
