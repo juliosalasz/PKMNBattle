@@ -38,8 +38,6 @@ export const GlobalContextProvider = ({ children }) => {
     setChallengerPkmn(resulArray[1]);
 
     setPkmnArray(resulArray);
-
-    console.log(selectedPkmn);
   }
 
   return (

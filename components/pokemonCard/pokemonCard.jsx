@@ -6,14 +6,18 @@ export default function PokemonCard({ pkmnArray }) {
   const nameUppercase = name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <div className={styles.pkmnCard}>
-      {nameUppercase}
-      <div>
-        <img
-          src={
-            pkmnArray["sprites"]["other"]["official-artwork"]["front_default"]
-          }
-          alt=""
-        />
+      <div className={styles.pkmnCardInterior}>
+        <div className={styles.pkmnCardInteriorTitle}>
+          <h2>{nameUppercase}</h2>
+        </div>
+        <div>
+          <img
+            src={
+              pkmnArray["sprites"]["other"]["official-artwork"]["front_default"]
+            }
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );
