@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import GetRandomPkmn from "../../components/getRanmdomPkmn/getRandomPkmn";
 
 export default function Home() {
