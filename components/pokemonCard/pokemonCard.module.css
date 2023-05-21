@@ -1,34 +1,112 @@
 .pkmnCard {
-  width: 350px;
-  height: 500px;
   background-color: black;
-  font-weight: 600;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  width: 420px;
+  height: 600px;
   overflow: hidden;
   border-radius: 12px;
-  padding: 10px;
+  padding: 15px;
+  position: relative;
 }
-
-.pkmnCardInterior {
-  background-color: blue;
+.pkmnCardBackground {
   background-image: url("../../assets/backpkmn.png");
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   border-radius: 12px;
 }
+.pkmnInterior {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top 30px left 0px;
+  position: relative;
+}
 
-.pkmnCardInteriorTitle {
+.pkmnCardName {
+  background-color: black;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  width: fit-content;
+  border-radius: 12px;
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  z-index: 99;
+}
+
+.pkmnTopNumber {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 36px;
+  font-weight: 700;
   color: white;
   background-color: black;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pkmnBottomInformation {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.pkmnBottomInformationPanel {
+  background-color: white;
+  width: 90%;
   border-radius: 12px;
-  padding: 5px 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-direction: column;
+  border: 10px solid black;
+}
+.pkmnBottomInformationType {
+  background-color: black;
+  font-size: 29px;
+  font-weight: 700;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+.pkmnBottomInformationInfo {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pkmnSprite {
+  width: 90px;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: center;
+}
+
+.pkmnNumbers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 0px;
+  justify-items: start;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
 }
