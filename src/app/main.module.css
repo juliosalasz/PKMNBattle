@@ -1,0 +1,21 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f64646;
+  font-family: "Inter", sans-serif;
+  padding: 30px;
+  gap: 20px;
+}
+.mainTitle {
+  font-weight: 700;
+  width: fit-content;
+  color: white;
+  font-size: 26px;
+  background-color: black;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 100px;
+}

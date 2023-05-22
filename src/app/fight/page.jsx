@@ -1,10 +1,15 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { useGlobalContext } from "../../../context/pkmnContext";
 import PokemonCard from "../../../components/pokemonCard/pokemonCard";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+import FightButton from "../../../components/fightButton/FightButton";
+import FakeCard from "../../../components/fakeCard/FakeCard";
+import vsIcon from "../../../assets/vs.svg";
+import spinningIcon from "../../../assets/spin.svg";
 
 import styled from "./fight.module.css";
 
@@ -39,6 +44,7 @@ export default function Fight() {
   };
 
   const chooseNewPkmn = () => {
+    console.log("1");
     //Here the challenger must replace the current
 
     setSelectedPkmn(challengerPkmn);
@@ -58,15 +64,45 @@ export default function Fight() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className={styled.mainFight}>
       <div className={styled.comparePkmnDisplay}>
         <div>
-          {pkmnArray ? <PokemonCard pkmnArray={selectedPkmn} /> : ""}
-          <button onClick={chooseCurrentPkmn}>Choose This one</button>
+          {pkmnArray ? (
+            <PokemonCard pkmnArray={selectedPkmn} />
+          ) : (
+            <FakeCard></FakeCard>
+          )}
+          <div className={styled.fightBtnDisplay}>
+            <FightButton clickHandler={chooseCurrentPkmn}>
+              Choose This one
+            </FightButton>
+          </div>
+        </div>
+        <div className={styled.vsScreen}>
+          <Image
+            className={styled.spinningVs}
+            priority
+            src={spinningIcon}
+            alt="spinningIcon"
+          />
+          <Image
+            className={styled.vsLetters}
+            priority
+            src={vsIcon}
+            alt="versus"
+          />
         </div>
         <div>
-          {pkmnArray ? <PokemonCard pkmnArray={challengerPkmn} /> : ""}
-          <button onClick={chooseNewPkmn}>No, Choose This one</button>
+          {pkmnArray ? (
+            <PokemonCard pkmnArray={challengerPkmn} />
+          ) : (
+            <FakeCard></FakeCard>
+          )}
+          <div className={styled.fightBtnDisplay}>
+            <FightButton clickHandler={chooseNewPkmn}>
+              No, Choose This one
+            </FightButton>
+          </div>
         </div>
       </div>
     </main>

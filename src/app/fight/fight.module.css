@@ -1,4 +1,52 @@
 .comparePkmnDisplay {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mainFight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fightBtnDisplay {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vsScreen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinningVs {
+  z-index: 1;
+  position: absolute;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vsLetters {
+  z-index: 99;
 }

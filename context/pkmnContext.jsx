@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useState,
-  createContext,
-  useContext,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { useState, createContext, useContext } from "react";
 
 const GlobalContext = createContext({
   pkmnArray: [],
@@ -17,6 +11,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [pkmnArray, setPkmnArray] = useState();
   const [selectedPkmn, setSelectedPkmn] = useState();
   const [challengerPkmn, setChallengerPkmn] = useState();
+  const [isfetching, setIsFetching] = useState(false);
 
   const randomNumber = () => {
     return Math.floor(Math.random() * (500 - 1 + 1) + 1);
@@ -24,6 +19,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   async function getRandomPkmns() {
     const resulArray = [];
+    setIsFetching(true);
 
     for (let i = 0; i < 11; i++) {
       const response = await fetch(
@@ -38,6 +34,8 @@ export const GlobalContextProvider = ({ children }) => {
     setChallengerPkmn(resulArray[1]);
 
     setPkmnArray(resulArray);
+
+    setIsFetching(false);
   }
 
   return (
@@ -50,6 +48,8 @@ export const GlobalContextProvider = ({ children }) => {
         setSelectedPkmn,
         challengerPkmn,
         setChallengerPkmn,
+        isfetching,
+        setIsFetching,
       }}
     >
       {children}
