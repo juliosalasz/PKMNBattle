@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useEffect } from "react";
 import PokemonCard from "../../../components/pokemonCard/pokemonCard";
 import { useGlobalContext } from "../../../context/pkmnContext";
 import { useRouter } from "next/navigation";
