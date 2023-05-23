@@ -24,10 +24,6 @@ export default function Fight() {
   const [counter, setCounter] = useState(1);
   const router = useRouter();
 
-  if (!pkmnArray) {
-    router.push("/");
-  }
-
   if (!challengerPkmn && pkmnArray) {
     setChallengerPkmn(pkmnArray[1]);
   }
@@ -46,6 +42,10 @@ export default function Fight() {
       setChallengerPkmn(pkmnArray[counterUp]);
     }
   };
+
+  if (!pkmnArray) {
+    router.push("/");
+  }
 
   const chooseNewPkmn = () => {
     console.log("1");

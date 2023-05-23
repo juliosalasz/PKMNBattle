@@ -12,13 +12,13 @@ export default function Winner() {
   const { pkmnArray, selectedPkmn, setPkmnArray } = useGlobalContext();
   const router = useRouter();
 
-  if (!pkmnArray) {
-    router.push("/");
-  }
   const goback = () => {
     router.push("/");
     setPkmnArray();
   };
+  if (!pkmnArray) {
+    router.push("/");
+  }
 
   return (
     <>
