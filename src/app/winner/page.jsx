@@ -9,12 +9,17 @@ import styles from "./winner.module.css";
 <footer className={styles.footerPkmn}>{selectedPkmn.name}</footer> */
 
 export default function Winner() {
-  const { selectedPkmn, setPkmnArray } = useGlobalContext();
+  const { pkmnArray, selectedPkmn, setPkmnArray } = useGlobalContext();
   const router = useRouter();
+
+  if (!pkmnArray) {
+    router.push("/");
+  }
   const goback = () => {
     router.push("/");
     setPkmnArray();
   };
+
   return (
     <>
       <main className={styles.mainWinner}>
