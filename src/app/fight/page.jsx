@@ -2,7 +2,7 @@
 import React from "react";
 import { useGlobalContext } from "../../../context/pkmnContext";
 import PokemonCard from "../../../components/pokemonCard/pokemonCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -24,6 +24,12 @@ export default function Fight() {
   const [counter, setCounter] = useState(1);
   const router = useRouter();
 
+  useEffect(() => {
+    if (!pkmnArray) {
+      router.push("/");
+    }
+  });
+
   if (!challengerPkmn && pkmnArray) {
     setChallengerPkmn(pkmnArray[1]);
   }
@@ -42,10 +48,6 @@ export default function Fight() {
       setChallengerPkmn(pkmnArray[counterUp]);
     }
   };
-
-  if (!pkmnArray) {
-    router.push("/");
-  }
 
   const chooseNewPkmn = () => {
     console.log("1");
