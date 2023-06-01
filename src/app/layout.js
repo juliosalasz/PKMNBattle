@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
           <header className={styles.mainTitle}>
             <h2>PICK YOUR FAVORITE PKMN</h2>
           </header>
-          <GlobalContextProvider>{children}</GlobalContextProvider>
+          <div className={styles.content}>
+            <GlobalContextProvider>{children}</GlobalContextProvider>
+          </div>
         </main>
       </body>
     </html>
