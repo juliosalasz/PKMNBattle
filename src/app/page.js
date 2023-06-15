@@ -26,9 +26,6 @@ export default function Home() {
             WINNER WILL BE THE ONE THAT MAKES IT TO THE END
           </p>
         </div>
-        <div className={style.step}>
-          <p className={style.stepTextMd}>MADE BY JULIO SALAS</p>
-        </div>
       </div>
     </main>
   );
